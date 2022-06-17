@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Как рабоать с api</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<div class="container-api">
+    <div class="box-api box-1-api">
+        <h3>Руководство по работе с api</h3>
+    </div>
+    <div class="box-api-content">
+        <p>Данное API предназначено для свободного пользования.</p>
+    <p>Вы можете использовать его в своих коммерческих целях.</p>
+    <p>Ответом на ваш запрос, содержащий электронный ПТС будет json, вида: </p>
+    <pre>
+          {
+            "vin": "",
+            "brand": "",
+            "commercial_name": "",
+            "vehicle_category_russia": "",
+            "vehicle_category_eacu": "",
+            "engine_number": "",
+            "chassis_number": "",
+            "body_number": "",
+            "body_color": "",
+            "manufacture_year": "",
+            "engines": [],
+            "environmental_class": "",
+            "issued_organization_name": "",
+            "modification": "",
+            "color_shade": "",
+            "running_order_weight": "",
+            "wheel_formula": "",
+            "seats_number": "",
+            "transmission_type": "",
+            "fuel_type": "",
+            "mandatory_safety_requirements_document": "",
+            "emergency_call_device_id": "",
+            "manufacturer": "",
+            "manufacturer_address": "",
+            "active_status_applied_territory": "",
+            "customs_restriction": "",
+            "owner": "",
+            "encumbrances_except_custom_restrictions": "",
+            "extract_number": "",
+            "extract_status": "",
+            "extract_date": "",
+            "generation_date_time": ""
+        }
+      </pre>
+    <p>
+        Для проверки результатов обработки вашего электронного ПТС воспользуйтесь <a href="/evl/ui">наглядным
+        примером.</a>
+    </p>
+    <p>
+        Или воспользуйтесь cURL коммандой curl -X POST host -F "file=@evlName.pdf" —keepalive-time 600 -iv —limit-rate
+        500K
+    </p>
+    </div>
+</div>
+</body>
+</html>

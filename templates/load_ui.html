@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Работа с эПТС</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<div class="container">
+    <div class="box-ui box-1-ui">
+        <form method="POST" enctype="multipart/form-data">
+            <div>{{ form.file.label }}</div>
+            <div class="form-group">
+                {{ form.file(class="form-control-file") }}
+                {% if form.file.errors %}
+                    {% for error in form.file.errors %}
+                        <span class="text-danger">{{ error }}</span></br>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div id="button">
+                {{ form.submit(id="button") }}
+            </div>
+        </form>
+    </div>
+    <div class="box-ui box-2-ui">
+        {% if json_data %}
+            <br><br><br><br>
+            <ol>
+            {
+                {% for key, value in json_data.items() %}
+                    "{{ key }}": "{{ value }}",<br>
+                {% endfor %}
+            }
+            </ol>
+        {% else %}
+            Загрузите файл, чтобы увидеть json
+        {% endif %}
+    </div>
+</div>
+</body>
+</html>
